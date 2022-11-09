@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <script src="https://unpkg.com/pdf-lib@1.4.0"></script>
+        <script src="https://unpkg.com/downloadjs@1.4.7"></script>
+        <link rel="stylesheet" href="./index.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>Img To PDF</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=IBM+Plex+Sans:wght@600&family=Merriweather&family=Montserrat&family=Pacifico&family=Sacramento&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    </head>
+
+    <body>
+
+
+        <div class="nav">
+            <span class="logo">
+            <i class="fa-solid fa-file-pdf"></i>    PDFology
+            </span>
+            <div>
+            <button onClick={calcPdfSize(this)} id="download" convertBtn={convertBtn}>SAVE AS PDF</button>
+            <button onClick={embedImages()} id="download1">DOWNLOAD</button>
+            <button id="upload-msg" type="button">UPLOAD FILES</button>
+            </div>
+        </div>
+
+        <div class="input-page" id="input-page">
+            <div class="choose-file">
+                <div class="add-more-files">
+                    <div class="inp-container">
+                        <input type="file" id="upload-file" onChange={encodeImageFileAsURL(this)} multiple accept="image/*"/>
+                        <h4 class="drop">
+                            DRAG & DROP OR
+                        </h4>
+                        <p >
+                            <i class="fa-regular fa-file-image fa-4x img-icon"></i></i>
+
+                        </p>
+                        <label htmlFor="upload-file" id="custom-file">CHOOSE FILES</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pdf-page" id="pdf-page">
+            <div class="create-pdf" id="create-pdf">
+
+            </div>
+        </div>
+
+        <script src="./index.js"></script>
+    </body>
+    </html>
